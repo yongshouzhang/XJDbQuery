@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace XJDbQuery
+namespace XJDbQuery.Expressions
 {
-    public class Class1
+    class DbExpressionVisitor
     {
+
     }
 }
