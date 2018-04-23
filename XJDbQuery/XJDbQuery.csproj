@@ -38,11 +38,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\DbTypeSystem.cs" />
+    <Compile Include="Common\PartialEvaluator.cs" />
+    <Compile Include="Common\ReadOnlyExtensions.cs" />
+    <Compile Include="Common\TypeHelper.cs" />
     <Compile Include="Expressions\DbExpression.cs" />
+    <Compile Include="Expressions\DbExpressionReplacer.cs" />
     <Compile Include="Expressions\DbExpressionVisitor.cs" />
     <Compile Include="Expressions\ExpressionVisitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\QueryProvider.cs" />
+    <Compile Include="Query\DbQuery.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

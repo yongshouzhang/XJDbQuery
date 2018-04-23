@@ -7,7 +7,7 @@ using System.Collections.ObjectModel;
 
 namespace XJDbQuery.Expressions
 {
-
+    using Common;
     public enum DbExpressionType
     {
         Table = 1000, // make sure these don't overlap with ExpressionType
@@ -259,6 +259,4 @@ namespace XJDbQuery.Expressions
             return "A:" + this.GetHashCode();
         }
     }
-
-  
 }
