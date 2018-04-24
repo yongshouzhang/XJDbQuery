@@ -8,6 +8,11 @@ namespace XJDbQuery.Common
     using Expressions;
     public static  class PartialEvaluator
     {
+        public static Expression Eval(Expression expression)
+        {
+            return Eval(expression, null, null);
+        }
+
         public static Expression Eval(Expression expression,Func<Expression,bool> fnCanBeEvaluated)
         {
             return Eval(expression, fnCanBeEvaluated, null);

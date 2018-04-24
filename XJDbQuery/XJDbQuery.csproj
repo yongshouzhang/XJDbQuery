@@ -47,8 +47,16 @@
     <Compile Include="Expressions\DbExpressionVisitor.cs" />
     <Compile Include="Expressions\ExpressionVisitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\DbQueryProvider.cs" />
     <Compile Include="Provider\QueryProvider.cs" />
     <Compile Include="Query\DbQuery.cs" />
+    <Compile Include="Translate\ColumnProjection.cs" />
+    <Compile Include="Translate\ColumnProjector.cs" />
+    <Compile Include="Translate\ProjectionBuilder.cs" />
+    <Compile Include="Translate\ProjectReader.cs" />
+    <Compile Include="Translate\QueryBinder.cs" />
+    <Compile Include="Translate\QueryFormatter.cs" />
+    <Compile Include="Translate\Translator.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
