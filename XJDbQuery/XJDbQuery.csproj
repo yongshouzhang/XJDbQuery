@@ -52,6 +52,8 @@
     <Compile Include="Query\DbQuery.cs" />
     <Compile Include="Translate\ColumnProjection.cs" />
     <Compile Include="Translate\ColumnProjector.cs" />
+    <Compile Include="Translate\DeclaredAliasGatherer.cs" />
+    <Compile Include="Translate\OrderByRewriter.cs" />
     <Compile Include="Translate\ProjectionBuilder.cs" />
     <Compile Include="Translate\ProjectReader.cs" />
     <Compile Include="Translate\QueryBinder.cs" />

@@ -7,6 +7,8 @@ using System.Collections;
 
 namespace XJDbQuery.Translate
 {
+    using Expressions;
+    using Common;
     public class ProjectionReader<T> : IEnumerable<T>, IEnumerable
     {
         Enumerator enumerator;
@@ -54,7 +56,7 @@ namespace XJDbQuery.Translate
                 // 将查询主体 替换为 查询参数
                 //
                 // Replace 参数 在query.Body 中搜索 query.parameter ，并用 Expression.Constant(this) 替换
-                ProjectionExpression projection = (ProjectionExpression)new Replacer().
+                ProjectionExpression projection = (ProjectionExpression)new DbExpressionReplacer().
                     Replace(query.Body, query.Parameters[0], Expression.Constant(this));
                 //计算 本地表达式,去除本地引用
                 projection = PartialEvaluator.Eval(projection, CanEvaluateLocally) as ProjectionExpression;

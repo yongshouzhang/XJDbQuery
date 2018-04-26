@@ -55,8 +55,6 @@ namespace XJDbQuery.Provider
 
         private TranslateResult Translate(Expression expression)
         {
-            //expression = PartialEvaluator.Eval(expression);
-
             return new Translator().Translate(expression);
         }
     }

@@ -11,11 +11,14 @@ namespace XJDbQuery.Translate
     {
         public TranslateResult Translate(Expression expression)
         {
-            var tmp = expression;
             expression = PartialEvaluator.Eval(expression);
-
-            ProjectionExpression project = new QueryBinder().Bind(expression) as ProjectionExpression;
-
+            ProjectionExpression project = expression as ProjectionExpression;
+            if (project == null)
+            {
+                expression = new QueryBinder().Bind(expression);
+                expression = OrderByRewriter.Rewrite(expression);
+                project = expression as ProjectionExpression;
+            }
             string commandText = new QueryFormatter().FormatExpression(project.Source);
 
             LambdaExpression projector = new ProjectionBuilder().Build(project.Projector);
