@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B9F6F9C2-CF2F-4DFD-A816-7D06A9A8D4C8}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{A0F7F0FF-0642-4A15-BFCE-B74FF415DB67}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XJDbQuery</RootNamespace>
-    <AssemblyName>XJDbQuery</AssemblyName>
+    <RootNamespace>QueryTest</RootNamespace>
+    <AssemblyName>QueryTest</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -38,26 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\DbTypeSystem.cs" />
-    <Compile Include="Common\PartialEvaluator.cs" />
-    <Compile Include="Common\TypeHelper.cs" />
-    <Compile Include="Expressions\DbExpression.cs" />
-    <Compile Include="Expressions\DbExpressionReplacer.cs" />
-    <Compile Include="Expressions\DbExpressionVisitor.cs" />
-    <Compile Include="Expressions\ExpressionVisitor.cs" />
+    <Compile Include="Model\Student.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Provider\DbQueryProvider.cs" />
-    <Compile Include="Provider\QueryProvider.cs" />
-    <Compile Include="Query\DbQuery.cs" />
-    <Compile Include="Translate\ColumnProjection.cs" />
-    <Compile Include="Translate\ColumnProjector.cs" />
-    <Compile Include="Translate\DeclaredAliasGatherer.cs" />
-    <Compile Include="Translate\OrderByRewriter.cs" />
-    <Compile Include="Translate\ProjectionBuilder.cs" />
-    <Compile Include="Translate\ProjectReader.cs" />
-    <Compile Include="Translate\QueryBinder.cs" />
-    <Compile Include="Translate\QueryFormatter.cs" />
-    <Compile Include="Translate\Translator.cs" />
+    <Compile Include="TestCode\SelectTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XJDbQuery\XJDbQuery.csproj">
+      <Project>{b9f6f9c2-cf2f-4dfd-a816-7d06a9a8d4c8}</Project>
+      <Name>XJDbQuery</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

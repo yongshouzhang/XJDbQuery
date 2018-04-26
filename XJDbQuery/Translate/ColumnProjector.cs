@@ -65,7 +65,8 @@ namespace XJDbQuery.Translate
             this.newAlias = newAlias;
             this.existAlias = new HashSet<string>(existAlias);
             this.candidates = this.nominator.Nominate(expression);
-            return new ProjectedColumns(this.Visit(expression), this.columns.ToReadOnly());
+            var exp = this.Visit(expression);
+            return new ProjectedColumns(this.Visit(expression), this.columns.AsReadOnly());
         }
 
         protected override Expression Visit(Expression exp)

@@ -23,6 +23,8 @@ namespace XJDbQuery.Expressions
                     return this.VisitTable((TableExpression)exp);
                 case DbExpressionType.Join:
                     return this.VisitJoin((JoinExpression)exp);
+                case DbExpressionType.Projection:
+                    return this.VisitProjection((ProjectionExpression)exp);
                 default:
                     return base.Visit(exp);
             }

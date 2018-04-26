@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Collections.ObjectModel;
+using System.Text;
 
 namespace XJDbQuery.Expressions
 {
@@ -151,7 +153,7 @@ namespace XJDbQuery.Expressions
         {
             this.alias = alias;
             this.columns = columns as ReadOnlyCollection<ColumnDeclaration>;
-            this.columns = this.columns == null ? columns.ToReadOnly<ColumnDeclaration>() : this.columns;
+            this.columns = this.columns == null ? columns.ToList().AsReadOnly() : this.columns;
             this.from = from;
             this.where = where;
             if (this.orderBy == null && orderBy != null)
